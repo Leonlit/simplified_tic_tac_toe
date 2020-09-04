@@ -85,7 +85,6 @@ body {
     transform:scale(1.2);
 }
 
-
 .center_FixedContAndText {
     position: fixed;
     text-align:center;
@@ -141,6 +140,3 @@ footer span a {
     color:orange;
     text-decoration: none;
 }
-
-
-

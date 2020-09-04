@@ -23,21 +23,17 @@ const SOLUTIONS = [
 ];
 
 window.onload = () => {
-  setupGame();
-}
-
-function setupGame () {
-  turn = 0;
   gameInit();
 }
 
 function stopGame () {
   for (let cellIndex=0; cellIndex < cells.length; cellIndex++){
-    cells[cellIndex].removeEventListener ("click", cellsClicked, false);
+    cells[cellIndex].removeEventListener ("click", cellsClicked);
   }
 }
 
 function gameInit () {
+  turn = 0;
   currentWinner = null;
   board = new Array(9);
 
@@ -46,14 +42,13 @@ function gameInit () {
   for (let cellIndex=0; cellIndex < cells.length; cellIndex++){
     cells[cellIndex].innerHTML = "";
     board.fill(null);
-    cells[cellIndex].addEventListener ("click", cellsClicked, false);
+    cells[cellIndex].addEventListener ("click", cellsClicked);
   }
 }
 
 let closeGameOverMenu = () => gameOverMenu.style.display = "none";
 
 function gameOver (result) {
-  console.log(result);
   winnerTeam.innerHTML = result;
   gameOverMenu.style.display = "block";
   restartBtn.style.display = "block";
@@ -77,7 +72,8 @@ function cellsClicked (event) {
   if (cellAvailable) {
     currentWinner = checkWinner(board, TEAM_ICON[turn]);
     if (currentWinner) {
-      gameOver(currentWinner);
+      let extra = currentWinner === "Draw" ? "" : " Win"
+      gameOver(currentWinner + extra);
     }
     turn = turn == 0 ? 1 : 0;
   }
