@@ -22,14 +22,9 @@ const SOLUTIONS = [
   [2, 4, 6]
 ];
 
+//initialise the game when the window loaded
 window.onload = () => {
   gameInit();
-}
-
-function stopGame () {
-  for (let cellIndex=0; cellIndex < cells.length; cellIndex++){
-    cells[cellIndex].removeEventListener ("click", cellsClicked);
-  }
 }
 
 function gameInit () {
@@ -107,18 +102,16 @@ function checkWinner (tempBoard, icon) {
       return TEAM_NAME[turn];
     }
   }
-
   //if there's no winner for the current round but there's no more empty cells in the grid, this means that 
   //the current match is a draw.
   if (getEmptyCellsSize(tempBoard) == 0) {
     return "Draw";
   }
-
   //But if there's still empty cells left, we can return null to indicate the match isn't over yet
   return null;
 }
 
 //checking for empty cells
 function getEmptyCellsSize (tempBoard) {
-    return tempBoard.filter(curr => (curr === null));
+  return tempBoard.some(curr => (curr === null));
 }

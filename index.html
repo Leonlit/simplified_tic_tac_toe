@@ -6,41 +6,38 @@
         <meta name='keywords' content='HTMl, CSS, JS'>
         <meta name='author' content='Leon Lit'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <link rel='icon' type='image/png' href='.png'/>
-
         <title>Simple Tic-Tac-Toe</title>
-
         <link rel='stylesheet' href='index.css'>
     </head>
     <body>
+      <table class="gameBoard center_FixedContAndText">
+        <tr>
+          <td id="0"></td>
+          <td id="1"></td>
+          <td id="2"></td>
+        </tr>
+        <tr>
+          <td id="3"></td>
+          <td id="4"></td>
+          <td id="5"></td>
+        </tr>
+        <tr>
+          <td id="6"></td>
+          <td id="7"></td>
+          <td id="8"></td>
+        </tr>
+      </table>
       <span id="restart" onclick="gameInit()">Clear</span>
-        <table class="gameBoard center_FixedContAndText">
-            <tr>
-              <td id="0"></td>
-              <td id="1"></td>
-              <td id="2"></td>
-            </tr>
-            <tr>
-              <td id="3"></td>
-              <td id="4"></td>
-              <td id="5"></td>
-            </tr>
-            <tr>
-              <td id="6"></td>
-              <td id="7"></td>
-              <td id="8"></td>
-            </tr>
-          </table>
-          <div class="center_FixedContAndText" id="gameOver">
-            <div id="close" onclick="closeGameOverMenu()">&#10006;</div>
-            <div class="center_FixedContAndText">The match result is :<br><br>
-              <span id="winTeam"></span>
-            </div>
-          </div>
-          <footer>
-            <span>Developed By <a target="_blank" href="https://github.com/Leonlit">leon</a></span>
-            <span><a target="_blank" href="https://github.com/Leonlit/simplified_tic_tac_toe">Source code</a></span>
-          </footer>
+      <div class="center_FixedContAndText" id="gameOver">
+        <div id="close" onclick="closeGameOverMenu()">&#10006;</div>
+        <div class="center_FixedContAndText">The match result is :<br><br>
+          <span id="winTeam"></span>
+        </div>
+      </div>
+      <footer>
+        <span>Developed By <a target="_blank" href="https://github.com/Leonlit">leon</a></span>
+        <span><a target="_blank" href="https://github.com/Leonlit/simplified_tic_tac_toe">Source code</a></span>
+      </footer>
     </body>
 </html>
 <script src='index.js'></script>
