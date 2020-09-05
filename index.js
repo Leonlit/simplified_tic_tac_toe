@@ -104,7 +104,7 @@ function checkWinner (tempBoard, icon) {
   }
   //if there's no winner for the current round but there's no more empty cells in the grid, this means that 
   //the current match is a draw.
-  if (getEmptyCellsSize(tempBoard) == 0) {
+  if (IsThereEmptyCellLeft(tempBoard) == 0) {
     return "Draw";
   }
   //But if there's still empty cells left, we can return null to indicate the match isn't over yet
@@ -112,6 +112,6 @@ function checkWinner (tempBoard, icon) {
 }
 
 //checking for empty cells
-function getEmptyCellsSize (tempBoard) {
+function IsThereEmptyCellLeft (tempBoard) {
   return tempBoard.some(curr => (curr === null));
 }
